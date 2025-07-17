@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&family=Fira+Code:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 270 100% 14%;
+  --muted: 270 20% 96%;
+  --muted-foreground: 270 10% 45%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 270 100% 14%;
+  --card: 0 0% 100%;
+  --card-foreground: 270 100% 14%;
+  --border: 270 60% 96%;
+  --input: 270 60% 90%;
+  --primary: 270 76% 45%;
+  --primary-foreground: 270 100% 99%;
+  --secondary: 270 20% 96%;
+  --secondary-foreground: 270 60% 10%;
+  --accent: 270 20% 96%;
+  --accent-foreground: 270 60% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 270 76% 45%;
+  --radius: 0.5rem;
+
+  /* Custom violet colors */
+  --violet-50: 281 100% 97%;
+  --violet-100: 280 100% 83%;
+  --violet-200: 282 100% 74%;
+  --violet-300: 280 100% 59%; 
+  --violet-400: 282 81% 46%;
+  --violet-500: 270 76% 35%;
+  --violet-600: 270 92% 23%;
+  --violet-700: 270 98% 14%;
+
+  /* Chart colors for sorting visualization */
+  --chart-1: 270 100% 83%;
+  --chart-2: 282 100% 74%;
+  --chart-3: 280 100% 59%;
+  --chart-4: 282 81% 46%;
+  --chart-5: 270 76% 35%;
+}
+
+.dark {
+  --background: 270 98% 14%;
+  --foreground: 0 0% 98%;
+  --muted: 270 92% 23%;
+  --muted-foreground: 270 5% 64.9%;
+  --popover: 270 98% 14%;
+  --popover-foreground: 0 0% 98%;
+  --card: 270 98% 14%;
+  --card-foreground: 0 0% 98%;
+  --border: 270 92% 23%;
+  --input: 270 92% 23%;
+  --primary: 282 81% 46%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 270 92% 23%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 270 92% 23%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 270 81% 46%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-inter antialiased bg-violet-50 text-violet-700;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    @apply bg-gradient-to-br from-violet-400 to-violet-500;
+  }
+
+  .algorithm-card {
+    @apply transition-all duration-300;
+  }
+  
+  .algorithm-card:hover {
+    @apply transform -translate-y-1 shadow-lg shadow-violet-400/20;
+  }
+
+  .visualization-bar {
+    @apply transition-all duration-300;
+  }
+
+  .nav-link {
+    @apply relative py-5 px-2;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute w-0 h-0.5 bg-violet-100 bottom-0 left-0 transition-all duration-300;
+  }
+
+  .nav-link:hover::after, .nav-link.active::after {
+    @apply w-full;
+  }
+}
+
+/* Custom components styling */
+.speed-slider {
+  @apply appearance-none h-2 rounded bg-violet-100;
+}
+
+.speed-slider::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 rounded-full bg-violet-400 cursor-pointer transition-all duration-150;
+}
+
+.speed-slider::-webkit-slider-thumb:hover {
+  @apply bg-violet-500;
+}
+
+code {
+  @apply font-code;
+}
+
+.code-editor {
+  @apply bg-violet-900 text-violet-100 p-4 rounded-lg overflow-x-auto font-code text-sm;
+}
